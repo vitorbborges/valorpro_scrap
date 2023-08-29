@@ -21,12 +21,12 @@ Contains a collection of functions used in the automation process, facilitating 
 Extracts board composition data from PDF files and saves it to a CSV format for easier analysis and storage.
 
 ## Additional Resources
-- **descritivas.html**: Potential descriptive statistics or visualizations.
+- **descritivas.html**: Descriptive statistics or visualizations.
 - **empresas.csv**: List of companies and related data.
 - **empresas_faltantes.csv**: Companies missing from the main dataset.
 - **valorPRO_empresas.csv**: Data related to VALORPRO companies.
 - **valorPRO_empresas.xlsx**: Excel data related to VALORPRO companies.
-- **wait_for_this/**: Directory containing images, possibly used for image recognition during automation.
+- **wait_for_this/**: Directory containing images used for image recognition during automation.
 
 ## About VALORPRO
 VALORPRO is a comprehensive platform offering exclusive news, real-time quotations from major stock exchanges, a vast database of over 8,000 Brazilian companies, and a suite of tools to support investment decisions. For more details on VALORPRO, visit [VALORPRO's official website](https://valorpro.globo.com/#/).
