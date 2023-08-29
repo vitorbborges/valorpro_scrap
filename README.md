@@ -29,7 +29,7 @@ Extracts board composition data from PDF files and saves it to a CSV format for 
 - **wait_for_this/**: Directory containing images, possibly used for image recognition during automation.
 
 ## About VALORPRO
-VALORPRO is a comprehensive platform offering exclusive news, real-time quotations from major stock exchanges, a vast database of over 8,000 Brazilian companies, and a suite of tools to support investment decisions. For more details on VALORPRO, visit [VALORPRO's official website](https://www.valor.com.br/valor-data/valor-pro).
+VALORPRO is a comprehensive platform offering exclusive news, real-time quotations from major stock exchanges, a vast database of over 8,000 Brazilian companies, and a suite of tools to support investment decisions. For more details on VALORPRO, visit [VALORPRO's official website](https://valorpro.globo.com/#/).
 
 ---
 
