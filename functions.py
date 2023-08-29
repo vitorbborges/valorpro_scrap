@@ -2,12 +2,24 @@ import os
 import time
 from pyautogui import size, screenshot, click, press, typewrite, locateOnScreen, hotkey, center
 import pytesseract
+import pygetwindow as gw
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 screenWidth, screenHeight = size()
 
 originalScreenWidth = 1920
 originalScreenHeight = 1080
+
+def open_application():
+
+    window = gw.getWindowsWithTitle('Valor PRO')
+    if window:
+        window[0].activate()
+    else:
+        hotkey('win', 'd')
+        my_click(60, 380)
+        my_click(60, 380)
+        time.sleep(60)
 
 
 def read_screen(x_start, y_start, x_end, y_end):
@@ -30,14 +42,14 @@ def my_click(x, y):
         int(y * screenHeight / originalScreenHeight)
     )
 
-def lookup_company(empresa):
+def lookup_company(cnpj):
     # empty the search bar
     my_click(180, 85)
     my_click(180, 85)
     press('backspace')
 
     # type the company name
-    typewrite(empresa)
+    typewrite(cnpj)
     time.sleep(2)
 
     # wait for the name to show and select it
@@ -60,7 +72,7 @@ def select_fields():
     while (time.time() - start_time) < 2:  # 2 seconds timeout
         location = locateOnScreen('wait_for_this/(Padrao).png', confidence=0.9)
         if location is not None:
-            time.sleep(0.3)
+            time.sleep(2)
             my_click(580, 165)
             time.sleep(0.1)
             my_click(640, 320)
@@ -107,7 +119,7 @@ def download(path):
         start_time = time.time()
         while not read_screen(330,240,150,25) == 'Administracao':
             if time.time() - start_time > 2:
-                return
+                return True
 
         # position of the 'printer' button
         time.sleep(0.3)
@@ -133,8 +145,7 @@ def download(path):
         # if the print menu didn't appear, reset the program
         if not found:
             reset_program()
-            pass
-            return
+            return False
 
         # wait for the file explorer menu to appear
         start_time = time.time()
@@ -148,8 +159,7 @@ def download(path):
         # if the file explorer menu didn't appear, reset the program
         if not found:
             reset_program()
-            pass
-            return
+            return False
 
         # position of the 'path'
         time.sleep(0.3)
@@ -169,3 +179,5 @@ def download(path):
         # save
         my_click(700, 670)
         time.sleep(3)
+        
+    return True
