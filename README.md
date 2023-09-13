@@ -20,6 +20,9 @@ Contains a collection of functions used in the automation process, facilitating 
 ### 4. pdf_to_csv.py
 Extracts board composition data from PDF files and saves it to a CSV format for easier analysis and storage.
 
+### 5. fix.py
+This script adds a column to the target dataset ("empresas.csv") with information about each company's CNPJ number, a unique identifier for companies in Brazil.
+
 ## Additional Resources
 - **descritivas.html**: Descriptive statistics or visualizations.
 - **empresas.csv**: List of companies and related data.
@@ -34,4 +37,3 @@ VALORPRO is a comprehensive platform offering exclusive news, real-time quotatio
 ---
 
 For more details or to contribute, please refer to the individual script files or raise an issue on the repository.
-
