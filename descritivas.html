@@ -7550,6 +7550,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'empresas.csv'</span><span class="p">)</span>
+<span class="n">xlsx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">'valorPRO_empresas.xlsx'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7603,7 +7604,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Número de empresas na base de dados coletada: 6296
+<pre>Número de empresas na base de dados coletada: 6310
 </pre>
 </div>
 </div>
@@ -7617,8 +7618,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">xlsx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">'valorPRO_empresas.xlsx'</span><span class="p">)</span>
-<span class="n">missing_companies</span> <span class="o">=</span> <span class="p">[</span><span class="n">company</span> <span class="k">for</span> <span class="n">company</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">'Empresa'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="k">if</span> <span class="n">company</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">xlsx</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">missing_companies</span> <span class="o">=</span> <span class="p">[</span><span class="n">company</span> <span class="k">for</span> <span class="n">company</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">'Empresa'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="k">if</span> <span class="n">company</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">xlsx</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()]</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">missing_companies</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'Empresas Faltantes'</span><span class="p">])</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'empresas_faltantes.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Um arquivo .csv denominado "empresas_faltantes.csv" foi criado contendo o nome das </span><span class="se">\n</span><span class="s1"> empresas que não foram coletadas.'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Número de empresas faltantes:'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">missing_companies</span><span class="p">))</span>
@@ -7637,8 +7637,8 @@ a.anchor-link {
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Um arquivo .csv denominado "empresas_faltantes.csv" foi criado contendo o nome das 
  empresas que não foram coletadas.
-Número de empresas faltantes: 891
-Percentual de empresas faltantes: 12.404%
+Número de empresas faltantes: 904
+Percentual de empresas faltantes: 12.585%
 </pre>
 </div>
 </div>
@@ -7696,7 +7696,7 @@ Percentual de empresas faltantes: 12.404%
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Percentual das empresas que possuem 'Presidente' em alguma data: 76.731%
+<pre>Percentual das empresas que possuem 'Presidente' em alguma data: 76.767%
 </pre>
 </div>
 </div>
